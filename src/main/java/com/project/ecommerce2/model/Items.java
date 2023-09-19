@@ -13,6 +13,11 @@ public class Items {
     private double price;
     private int limitPerson;
     private int availableQuantity;
+    private int quantity;
+
+    @ManyToOne
+    @JoinColumn(name = "cart_id") // Coluna de chave estrangeira no banco de dados
+    private Cart cart;
 
     public Long getId() {
         return id;
@@ -52,5 +57,21 @@ public class Items {
 
     public void setAvailableQuantity(int availableQuantity) {
         this.availableQuantity = availableQuantity;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 }
