@@ -1,5 +1,6 @@
 package com.project.ecommerce2.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.ecommerce2.model.Cart;
 import com.project.ecommerce2.model.Items;
 import jakarta.persistence.*;
@@ -13,6 +14,7 @@ public class CartItems {
 
     @ManyToOne
     @JoinColumn(name = "cart_id")
+    @JsonIgnore // Adicione esta anotação para evitar a serialização circular
     private Cart cart;
 
     @ManyToOne

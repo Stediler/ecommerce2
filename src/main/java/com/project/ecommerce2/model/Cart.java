@@ -67,4 +67,14 @@ public class Cart {
         newCartItem.setQuantity(quantity);
         cartItems.add(newCartItem);
     }
+
+    public int getItemQuantity(Items item) {
+        // Percorra a lista de itens no carrinho e verifique se há um item correspondente
+        for (CartItems cartItem : cartItems) {
+            if (cartItem.getItem().equals(item)) {
+                return cartItem.getQuantity();
+            }
+        }
+        return 0; // Retorna 0 se o item não for encontrado no carrinho
+    }
 }
