@@ -44,8 +44,13 @@ public class ItemsController {
         }
 
         List<CartItems> cartItems = existingCart.getCartItems();
-
         return ResponseEntity.status(HttpStatus.OK).body(cartItems); // Retorna a lista de itens no carrinho do cliente
+    }
+
+    @GetMapping("/list-customer-ids")
+    public ResponseEntity<List<UUID>> listCustomerIds() {
+        List<UUID> customerIds = cartRepository.findAllCustomerIds();
+        return ResponseEntity.status(HttpStatus.OK).body(customerIds);
     }
 }
 

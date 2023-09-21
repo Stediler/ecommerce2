@@ -1,21 +1,22 @@
 package com.project.ecommerce2.model;
 
+import java.util.List;
 import java.util.UUID;
 
 public class AddItemRequest {
-    private Long itemId;
+    private List<Long> itemIds;
     private String customerId;
 
-    public Long getItemId() {
-        return itemId;
+    public List<Long> getItemIds() {
+        return itemIds;
     }
 
-    public void setItemId(Long itemId) {
-        this.itemId = itemId;
+    public void setItemIds(List<Long> itemIds) {
+        this.itemIds = itemIds;
     }
 
     public UUID getCustomerId() {
-        return UUID.fromString(customerId);
+        return customerId != null ? UUID.fromString(customerId) : null;
     }
 
     public void setCustomerId(String customerId) {
