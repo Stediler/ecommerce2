@@ -1,18 +1,20 @@
 package com.project.ecommerce2.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public class AddItemRequest {
-    private List<Long> itemIds;
+    private Map<Long, Integer> itemQuantities = new HashMap<>();
     private String customerId;
 
-    public List<Long> getItemIds() {
-        return itemIds;
+    public Map<Long, Integer> getItemQuantities() {
+        return itemQuantities;
     }
 
-    public void setItemIds(List<Long> itemIds) {
-        this.itemIds = itemIds;
+    public void setItemQuantities(Map<Long, Integer> itemQuantities) {
+        this.itemQuantities = itemQuantities;
     }
 
     public UUID getCustomerId() {
@@ -21,5 +23,9 @@ public class AddItemRequest {
 
     public void setCustomerId(String customerId) {
         this.customerId = customerId;
+    }
+
+    public List<Long> getItemIds() {
+        return null;
     }
 }
